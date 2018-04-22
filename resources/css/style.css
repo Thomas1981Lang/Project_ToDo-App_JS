@@ -369,6 +369,8 @@ fieldset input {
     margin: 0;
     background-color: #eee;
     color: #444;
+    font-weight: bolder;
+    text-shadow: 0px 0px 1px rgb(180, 180, 180), 0px 0px 1px rgb(180, 180, 180);
     cursor: pointer;
     padding: 18px;
     text-align: left;
@@ -510,73 +512,6 @@ footer {
 }
 
 
-/*!****************************/
-/******* TASK - SECTION *******/
-/****************************!*/
-
-/*.task {*/
-/*width: 100%;*/
-/*}*/
-
-/*table {*/
-/*display: flex;*/
-/*flex-direction: column;*/
-/*padding: 20px;*/
-/*}*/
-
-/*thead,*/
-/*tfoot,*/
-/*tbody {*/
-/*display: flex;*/
-/*flex-direction: column;*/
-/*}*/
-
-/*thead {*/
-/*border-collapse: collapse;*/
-/*border: 1px solid black;*/
-/*border-radius: 15px 50px 0 0;*/
-/*padding: 30px 20px;*/
-/*background-color: darkblue;*/
-/*color: white;*/
-/*}*/
-
-/*tbody tr {*/
-/*padding: 20px;*/
-/*border: 1px solid black;*/
-/*margin: 10px 0;*/
-/*}*/
-
-/*tfoot {*/
-/*border-collapse: collapse;*/
-/*border: 1px solid black;*/
-/*border-radius: 0 0 15px 50px;*/
-/*padding: 30px 20px;*/
-/*background-color: darkblue;*/
-/*color: white;*/
-/*}*/
-
-/*tr {*/
-/*padding: 0px;*/
-/*display: flex;*/
-/*justify-content: space-between;*/
-/*}*/
-
-/*!****************************/
-/****** DONE - SECTION ******/
-/****************************!*/
-
-/*.done thead, .done tfoot {*/
-/*background-color: green;*/
-/*color: white;*/
-/*}*/
-
-/*.done tbody {*/
-/*background-color: rgb(0, 221, 0);*/
-/*}*/
-
-/*.done tbody tr {*/
-/*background-color: rgba(128, 128, 128, 0.692)*/
-/*}*/
 
 
 

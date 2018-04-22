@@ -1,5 +1,5 @@
-var that;
-
+var del_id;
+var deleteEinrag;
 /*---------------------------------
 ---------- neuen Eintrag ----------
 ---------------------------------*/
@@ -66,6 +66,9 @@ $(document).ready(function () {
 })
 
 
+
+
+
 /*---------------------------------
 ---------- Receive ToDo ----------
 ---------------------------------*/
@@ -77,7 +80,7 @@ $(document).ready(function () {
             "comment": "Aliquip ipsum nostrud amet voluptate aute fugiat elit. Irure commodo cupidatat excepteur consequat labore aliqua laborum est anim. Commodo culpa occaecat velit consequat deserunt excepteur irure deserunt minim cillum proident qui deserunt. Consequat commodo voluptate cillum sint voluptate mollit labore aliquip duis reprehenderit. Ex fugiat voluptate aliqua pariatur consequat ex enim anim sit Lorem ea dolore eu officia. Ea culpa irure esse do ex adipisicing duis aliqua occaecat irure. Exercitation eiusmod pariatur et sunt nulla sunt irure irure eiusmod culpa duis anim incididunt.\r\n",
             "option": 0,
             "date": "09.11.2017",
-            "prio": 0
+            "prio": 1
         },
         {
             "id": 1,
@@ -85,7 +88,7 @@ $(document).ready(function () {
             "comment": "Reprehenderit elit ea exercitation cillum laboris. Ad fugiat eu pariatur consectetur id adipisicing nisi ad velit officia do. Lorem Lorem aliquip laboris ullamco consectetur. Irure culpa consequat nostrud pariatur reprehenderit enim eiusmod laborum. Est esse ut qui consequat Lorem consequat excepteur amet dolore nostrud. Sit laborum ullamco magna id proident reprehenderit pariatur est.\r\n",
             "option": 1,
             "date": "20.02.2018",
-            "prio": 1
+            "prio": 2
         },
         {
             "id": 2,
@@ -101,7 +104,7 @@ $(document).ready(function () {
             "comment": "Excepteur elit nisi ad aliqua voluptate deserunt minim sint esse officia. Ex enim veniam pariatur anim qui ipsum laborum Lorem et ea. Ullamco labore enim elit Lorem est ex. Aliquip in elit tempor velit minim exercitation ipsum sunt.\r\n",
             "option": 3,
             "date": "24.8.2017",
-            "prio": 3
+            "prio": 5
         },
         {
             "id": 4,
@@ -112,45 +115,65 @@ $(document).ready(function () {
             "prio": 4
         },
         {
-            "id": 7,
+            "id": 5,
             "task": 'versuchtask7',
             "comment": "Lorem ut ea elit proident non laborum laboris. Reprehenderit do exercitation nulla ex. Dolore ipsum commodo cupidatat ullamco et pariatur id est quis. Nostrud enim Lorem cillum cupidatat nostrud et.\r\n",
             "option": 5,
             "date": "03.01.2017",
             "prio": 5
         },
-        {
-            "id": 6,
-            "task": 'blabal',
-            "comment": "Id excepteur dolore exercitation velit amet cupidatat sit dolore laborum. Et eu id labore aliqua proident proident officia eu. Anim Lorem deserunt ea sunt pariatur nisi cupidatat. Fugiat ea ullamco ullamco nostrud consequat aliqua est eu in adipisicing aute tempor reprehenderit.\r\n",
-            "option": 6,
-            "date": "09.12.2017",
-            "prio": 6
-        }
+
     ];
 
     console.log('2', receive_todo);
 
 
-    var i;
-var x = 0;
+    for (var i = 0; i <= receive_todo.length; i++) {
 
-    for (i in receive_todo) {
-
-        console.log(x);
 
 
 
         // console.log(todo_text);
-        (function(i) { // iife um Wert anzuheften
+        (function (i) {
+
+            $('.delete').on('click', function () {
+                var that = $(this);
+                $('.dialog').modal();
+                console.log('hffasdfaffsdafdacfffo');
+                $('.yes').on('click', function () {
+                    console.log('hadddddo');
+                    del_id = $(that).closest('.section').data('id');
+                    console.log(del_id);
+                    // $(that).closest('.accordion-toggle_task').css( "background-color", "red" );
+                    $(that).closest('.section').remove();
+                    var deleteEintrag = {
+                        typ: 'delete',
+                        id: del_id
+                    };
+
+                    console.log(deleteEintrag);
+                    $.modal.close();
+                });
+
+                $('.no').on('click', function () {
+                    $.modal.close();
+                });
+            });
+
+
+
 
             var todo_text = `
-                <h4 class="accordion-toggle_task">
+                <div data-id="${receive_todo[i].id}" class="section">
+                <h4 data-prio="${receive_todo[i].prio}" class="accordion-toggle_task">
                 <span class="make_task">${receive_todo[i].task}</span>
                 <span class="make_infos">
                 <span>Kategorie: </span><span class="make_categories">${receive_todo[i].option}</span>
                 <span>Fällig:<span class="make_time">${receive_todo[i].date}</span></span>
                 <span class="make_modify">
+                <span class="make_edit">
+                <img class="button_img done" src="resources/img/clipboard.svg" alt="done" title="ToDo Done">
+                </span>
                 <span class="make_edit">
                 <img class="button_img edit" src="resources/img/inclined-pencil.svg" alt="edit" title="Modify your Task">
                 </span>
@@ -162,13 +185,84 @@ var x = 0;
                 </h4>
                 <div class="accordion-content_task">
                 <p>${receive_todo[i].comment}</p>
+                </div>
                 </div>`
 
-            var that = $(this);
-        $('#accordion_task').append(todo_text);
-            x++;
-            console.log(x);
+/*---------------------------------
+---------- Delete ToDo ----------
+---------------------------------*/
+
+            $('#accordion_task').append(todo_text);
+
+            $('#accordion_task')
+                .find('.accordion-toggle_task')
+                .click(function () {
+
+                    if ($(this).is('.aktiv')) {
+
+                    } else {
+
+                        $(".aktiv")
+                            .not($(this))
+                            .removeClass('aktiv');
+
+                        $(this)
+                            .addClass('aktiv')
+                            .next()
+                            .slideToggle('fast');
+
+                        $(".accordion-content_task")
+                            .not($(this).next())
+                            .slideUp('fast')
+                            .removeClass('aktiv');
+                    }
+                });
+
+
+            /*-------------------  prio farbe ------------*/
+
+            $('[data-prio="1"]').css({'background':'green'});
+            $('[data-prio="2"]').css({'background':'greenyellow'});
+            $('[data-prio="3"]').css({'background':'#ffff00'});
+            $('[data-prio="4"]').css({'background':'#ff8000'});
+            $('[data-prio="5"]').css({'background':'red'});
+
+
+            /*-------------------  Modification ------------*/
+
+            $('.edit').on('click', function () {
+                var that = $(this);
+
+                $('img.done').hide();
+                $('img.delete').hide();
+                $('img.edit').attr('src', "resources/img/save_black");
+
+                console.log('o');
+                $('.yes').on('click', function () {
+                    console.log('hadddddo');
+                    del_id = $(that).closest('.section').data('id');
+                    console.log(del_id);
+                    // $(that).closest('.accordion-toggle_task').css( "background-color", "red" );
+                    $(that).closest('.section').remove();
+
+                });
+
+                $('').on('click', function () {
+
+                });
+            });
+
+
+
         }(i));
 
     }
+
+
 })
+
+
+
+
+
+

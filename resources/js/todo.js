@@ -5,8 +5,6 @@ $(document).ready(function () {
     document.getElementById('inpute_date').valueAsDate = new Date();
 
 
-
-
     /*-----------------  Priority Changer------------------------*/
     $('#input_radio_box [type="radio"]').on('change', function () {
 
@@ -49,6 +47,42 @@ $(document).ready(function () {
 
 
     /*------------- Task Accordiion -----------*/
+
+
+});
+
+
+/*------------ Confirm Delete ---------*/
+
+
+$('.delete').on('click', function () {
+    $('.dialog').modal();
+
+    $('.yes').on('click', function () {
+
+        console.log(this)
+        $.modal.close();
+    });
+
+    $('.no').on('click', function () {
+        $.modal.close();
+    });
+
+
+});
+
+
+/* TODO: Fix it */
+
+// $('.edit').on('click', function () {
+//     console.log('edit')
+//     $('accordion_task').attr('contenteditable', true);
+//
+// });
+
+
+/*----------     Accordion     ----------*/
+var accordion_fc = function () {
     $('#accordion_task')
         .find('.accordion-toggle_task')
         .click(function () {
@@ -72,39 +106,6 @@ $(document).ready(function () {
                     .not($(this).next())
                     .slideUp('fast')
                     .removeClass('aktiv');
-
-
             }
         });
-
-
-    /*------------ Confirm Delete ---------*/
-
-    $('.delete').on('click', function () {
-        $('.dialog').modal();
-    });
-
-    $('.yes').on('click', function () {
-        $.modal.close();
-    });
-
-    $('.no').on('click', function () {
-        $.modal.close();
-    });
-
-
-    
-
-    /* TODO: Fix it */
-
-    $('.edit').on('click', function() {
-        console.log('edit')
-    $('accordion_task').attr('contenteditable', true);
-
-    });
-
-
-
-}); //document.ready
-
-
+}
