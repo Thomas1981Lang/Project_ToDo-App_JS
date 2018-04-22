@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo-App</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/css/reset.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+            integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+            crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+<!-- HEADER SECTION Start -->
+<header>
+    <section class="logo">
+        <div class="rahmen">
+            <h2>Web Developer</h2>
+            <h3>PHP</h3>
+        </div>
+    </section>
+
+    <section class="title">
+        <h1>ToDo-App</h1>
+    </section>
+</header>
+<!-- HEADER SECTION End -->
+
+
+<main>
+    <section class="input">
+        <div class="input_box">
+
+            <form action="" id="input_form">
+
+
+                <div class="input_task">
+                    <label for="task">ToDo-Eingabe</label>
+                    <input type="text" name="task" id="task" value="" placeholder="Aufgabe">
+                </div>
+
+
+                <textarea id='input_textarea' class="input_textarea" name="input_task" form="input_form"
+                          placeholder="Info zur Aufgabe"></textarea>
+
+                <div class="input_kategorie">
+                    <label for="input_option">Kategorie</label>
+                    <select id="input_option" name="input_option">
+                        <option value="teaglich">Täglich</option>
+                        <option value="gedanken">Gedanken</option>
+                        <option value="kaufen">Einkauf</option>
+                    </select>
+                </div>
+
+                <div class="input_date">
+                    <label for="inpute_date">zu erledigen bis:</label>
+                    <input type="date" name="inpute_date" id="inpute_date" value="">
+                </div>
+
+                <fieldset id="input_radio_box">
+                    <label for="eins">1</label>
+                    <input type="radio" id="eins" name="prio" value="1">
+                    <label for="zwei">2</label>
+                    <input type="radio" id="zwei" name="prio" value="2">
+                    <label class="prio_three" for="drei">3</label>
+                    <input type="radio" id="drei" name="prio" value="3" checked>
+                    <label for="vier">4</label>
+                    <input type="radio" id="vier" name="prio" value="4">
+                    <label for="fuenf">5</label>
+                    <input type="radio" id="fuenf" name="prio" value="5">
+                </fieldset>
+                <input id="input_submit" type="image" class="button_img" src="resources/img/save.svg">
+
+            </form>
+        </div>
+    </section>
+
+
+    <section class="selection">
+        <form class="selection_form" action="">
+            <label for="sortieren">Sortieren nach:</label>
+            <select id="sortieren" name="sortieren">
+                <option class="bigger" value="prio">Priorität</option>
+                <option class="bigger" value="date">Nach Datum</option>
+                <option class="bigger" value="title">Titel</option>
+            </select>
+        </form>
+    </section>
+
+
+    <section class="task">
+        <div id="accordion_task">
+            <h4 class="accordion-toggle_task">
+                <span class="make_task">Aufgabe</span>
+                <span class="make_infos">
+                    <span>Kategorie: </span><span class="make_categories">Kategorie</span>
+                    <span>Fällig:<span class="make_time">01.06.2018</span></span>
+                    <span class="make_modify">
+                        <span class="make_edit">
+                            <img class="button_img edit" src="resources/img/inclined-pencil.svg"
+                                 alt="edit" title="Modify your Task">
+                        </span>
+                        <span class="make_delete">
+                            <img class="button_img delete" src="resources/img/garbage.svg"
+                                 alt="delete" title="Delete your Task">
+                        </span>
+                    </span>
+                </span>
+            </h4>
+            <div class="accordion-content_task">
+                <p>Cras malesuada ultrices augue molestie risus.</p>
+            </div>
+            <h4 class="accordion-toggle_task">Accordion 2</h4>
+            <div class="accordion-content_task">
+                <p>Lorem ipsum dolor sit amet mauris eu turpis.</p>
+            </div>
+            <h4 class="accordion-toggle_task">Accordion 3</h4>
+            <div class="accordion-content_task">
+                <p>Vivamus facilisisnibh scelerisque laoreet.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="done">
+
+    </section>
+
+
+</main>
+
+<section class="dialog">
+    <h3>Willst du diesen Task wirklich löschen?</h3>
+    <div class="btns">
+        <button class="yes">Ja, bitte!</button>
+        <button class="no">Nein, danke!</button>
+    </div>
+
+    <div style='display:none'>
+        <img src='resources/img/x.png' alt='close'/>
+    </div>
+</section>
+
+
+<footer>&COPY; 2108 TL</footer>
+<script src="resources/js/jquery.js"></script>
+<script src="resources/js/jquery.simplemodal.js"></script>
+<script src="./resources/js/todo.js"></script>
+<script src="resources/js/ajax_dummy_data.js"></script>
+</body>
+
+</html>
