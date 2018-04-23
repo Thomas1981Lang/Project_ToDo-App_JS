@@ -37,13 +37,14 @@
 </header>
 <!-- HEADER SECTION End -->
 
-
+<!-- MAIN SECTION Start -->
 <main>
+
+    <!--    TODO INPUT Start    -->
     <section class="input">
         <div class="input_box">
 
             <form action="" id="input_form">
-
 
                 <div class="input_task">
                     <label for="task">ToDo-Eingabe</label>
@@ -85,8 +86,10 @@
             </form>
         </div>
     </section>
+    <!--    TODO INPUT End    -->
 
 
+    <!--    SORT REQUEST Start  -->
     <section class="selection">
         <form class="selection_form" action="">
             <label for="sortieren">Sortieren nach:</label>
@@ -96,22 +99,54 @@
                 <option class="bigger" value="title">Titel</option>
             </select>
         </form>
+
+        <form class="selection_form" action="">
+            <div>
+                Welche Tasks anzeigen?
+                <label class="checkbox">
+                    <input id="prio_choose1" type="checkbox" name="prio_choose" value="1" checked>
+                    1
+                </label>
+
+                <label class="checkbox">
+                    <input id="prio_choose2" type="checkbox" name="prio_choose" value="2" checked>
+                    2
+                </label>
+
+                <label class="checkbox">
+                    <input id="prio_choose3" type="checkbox" name="prio_choose" value="3" checked>
+                    3
+                </label>
+                <label class="checkbox">
+                    <input id="prio_choose4" type="checkbox" name="prio_choose" value="4" checked>
+                    4
+                </label>
+                <label class="checkbox">
+                    <input id="prio_choose5" type="checkbox" name="prio_choose" value="5" checked>
+                    5
+                </label>
+                <label class="checkbox">
+                    <input id="prio_chooseDone" type="checkbox" name="done_choose" value="done" checked>
+                    done
+                </label>
+            </div>
+        </form>
     </section>
+    <!--    SORT REQUEST End  -->
 
 
+    <!--    TODO LIST Start-->
     <section class="task">
         <div id="accordion_task">
 
         </div>
     </section>
-
-
-    <section class="done">
-
-    </section>
+    <!--    TODO LIST End-->
 
 
 </main>
+<!-- MAIN SECTION End -->
+
 
 <section class="dialog">
     <h3>Willst du diesen Task wirklich löschen?</h3>
@@ -129,6 +164,7 @@
 <footer>&COPY; 2108 TL</footer>
 <script src="resources/js/jquery.js"></script>
 <script src="resources/js/jquery.simplemodal.js"></script>
+<script src="resources/js/jquery.mobile.custom.min.js"></script>
 <script src="./resources/js/todo.js"></script>
 <script src="resources/js/ajax_dummy_data.js"></script>
 </body>

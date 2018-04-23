@@ -1,0 +1,113 @@
+ToDo-App
+Schnittstellenbeschreibung
+
+URL: http://localhost/todo.php
+
+1.) Neuer Eintrag
+REQUEST-Methode: POST
+Format Daten: JSON
+Daten:
+{
+typ: 'neu',
+task: STRING
+ comment: STRING
+option: STRING
+date: DATE
+prio: INTEGER[1,5]
+}
+
+RESPONSE
+Format-Daten: JSON
+
+Fehler:
+{
+  fehlernummer: INTEGER,
+  feldname (Optional): STRING
+}
+
+2.) ToDo-Liste erhalten
+
+REQUEST-Methode: POST
+Format Daten: JSON
+Daten:
+{
+  typ: 'get'
+}
+
+RESPONSE
+Format-Daten: JSON
+REQUEST-Methode: POST
+Daten:
+{
+  id: STRING,
+  task: STRING,
+  comment: STRING,
+  option:INTEGER,
+  date: INTEGER,
+  prio: INTEGER,
+  done: BOOLEAN
+}
+
+
+3.) Sortierte ToDo-Liste
+
+REQUEST-Methode: POST
+Format Daten: JSON
+Daten:
+{
+  typ: 'sortieren'
+  art: STRING
+}
+
+RESPONSE
+Format-Daten: JSON
+REQUEST-Methode: POST
+Daten:
+{
+  id: STRING,
+  task: STRING,
+  comment: STRING,
+  option:INTEGER,
+  date: INTEGER,
+  prio: INTEGER
+}
+
+
+4.) Eintrag bearbeiten
+REQUEST-Methode: POST
+Format Daten: JSON
+Daten:
+{
+  typ: 'edit',  
+  task: STRING
+  comment: STRING
+  option: STRING
+  date: DATE
+  prio: INTEGER[1,5]
+}
+
+5.) Delete
+
+REQUEST-Methode: POST
+Format Daten: JSON
+Daten:
+{
+  typ:'delete',
+  id:INTEGER
+}
+
+RESPONSE
+Format-Daten: JSON
+
+Fehler:
+{
+  fehlernummer: INTEGER,
+}
+
+
+Anhang A) Fehlernummern
+404 -> nicht gefunden
+406 -> Datenformat/inhalt nicht korrekt
+407 -> Daten nicht vollst�ndig
+500 -> allgemeiner Fehler
+501 -> Datenbank nicht vorhanden

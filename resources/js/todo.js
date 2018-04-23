@@ -53,24 +53,24 @@ $(document).ready(function () {
 
 
 /*------------ Confirm Delete ---------*/
-
-
-$('.delete').on('click', function () {
-    $('.dialog').modal();
-
-    $('.yes').on('click', function () {
-
-        console.log(this)
-        $.modal.close();
-    });
-
-    $('.no').on('click', function () {
-        $.modal.close();
-    });
-
-
-});
-
+//
+//
+// $('.delete').on('click', function () {
+//     $('.dialog').modal();
+//
+//     $('.yes').on('click', function () {
+//
+//         console.log(this)
+//         $.modal.close();
+//     });
+//
+//     $('.no').on('click', function () {
+//         $.modal.close();
+//     });
+//
+//
+// });
+//
 
 /* TODO: Fix it */
 
@@ -80,32 +80,32 @@ $('.delete').on('click', function () {
 //
 // });
 
-
-/*----------     Accordion     ----------*/
-var accordion_fc = function () {
-    $('#accordion_task')
-        .find('.accordion-toggle_task')
-        .click(function () {
-
-            console.log('rrr');
-
-            if ($(this).is('.aktiv')) {
-                console.log('warum');
-            } else {
-                console.log($(this).attr('class'));
-                $(".aktiv")
-                    .not($(this))
-                    .removeClass('aktiv');
-
-                $(this)
-                    .addClass('aktiv')
-                    .next()
-                    .slideToggle('fast');
-
-                $(".accordion-content_task")
-                    .not($(this).next())
-                    .slideUp('fast')
-                    .removeClass('aktiv');
-            }
-        });
-}
+//
+// /*----------     Accordion     ----------*/
+// var accordion_fc = function () {
+//     $('#accordion_task')
+//         .find('.accordion-toggle_task')
+//         .click(function () {
+//
+//             console.log('rrr');
+//
+//             if ($(this).is('.aktiv')) {
+//                 console.log('warum');
+//             } else {
+//                 console.log($(this).attr('class'));
+//                 $(".aktiv")
+//                     .not($(this))
+//                     .removeClass('aktiv');
+//
+//                 $(this)
+//                     .addClass('aktiv')
+//                     .next()
+//                     .slideToggle('fast');
+//
+//                 $(".accordion-content_task")
+//                     .not($(this).next())
+//                     .slideUp('fast')
+//                     .removeClass('aktiv');
+//             }
+//         });
+// }

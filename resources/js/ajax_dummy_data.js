@@ -34,19 +34,6 @@ $('.selection_form').on('change', function () {
     console.log(sortTabelle);
 })
 
-
-/*---------------------------------
----------- Ask for ToDo ----------
----------------------------------*/
-$(document).ready(function () {
-    var ask_todo = {
-        typ: 'abfrage',
-        sort: $('#sortieren').val()
-    }
-    console.log('1', ask_todo);
-
-})
-
 /*---------------------------------
 ---------- Ask for ToDo ----------
 ---------------------------------*/
@@ -64,9 +51,6 @@ $(document).ready(function () {
     console.log(editEintrag);
 
 })
-
-
-
 
 
 /*---------------------------------
@@ -112,7 +96,8 @@ $(document).ready(function () {
             "comment": "In ea irure do nostrud magna magna ex proident magna. Non mollit nisi laborum consequat. Sit ea pariatur deserunt velit tempor anim incididunt voluptate eiusmod cillum magna cillum mollit. Excepteur reprehenderit veniam et laborum mollit mollit ullamco aliquip aute fugiat. Ex qui enim elit minim veniam mollit proident eiusmod dolore.\r\n",
             "option": 4,
             "date": "01.10.2017",
-            "prio": 4
+            "prio": 4,
+            "done": 1
         },
         {
             "id": 5,
@@ -120,7 +105,8 @@ $(document).ready(function () {
             "comment": "Lorem ut ea elit proident non laborum laboris. Reprehenderit do exercitation nulla ex. Dolore ipsum commodo cupidatat ullamco et pariatur id est quis. Nostrud enim Lorem cillum cupidatat nostrud et.\r\n",
             "option": 5,
             "date": "03.01.2017",
-            "prio": 5
+            "prio": 5,
+            "done": 0
         },
 
     ];
@@ -161,13 +147,12 @@ $(document).ready(function () {
             });
 
 
-
-
             var todo_text = `
                 <div data-id="${receive_todo[i].id}" class="section">
-                <h4 data-prio="${receive_todo[i].prio}" class="accordion-toggle_task">
+                <h4 data-prio="${receive_todo[i].prio}" data-done="${receive_todo[i].done}" class="accordion-toggle_task">
                 <span class="make_task">${receive_todo[i].task}</span>
                 <span class="make_infos">
+                <span class="prio_hide">Priorität: <span class="make_categories">${receive_todo[i].prio}</span></span>
                 <span>Kategorie: </span><span class="make_categories">${receive_todo[i].option}</span>
                 <span>Fällig:<span class="make_time">${receive_todo[i].date}</span></span>
                 <span class="make_modify">
@@ -188,9 +173,9 @@ $(document).ready(function () {
                 </div>
                 </div>`
 
-/*---------------------------------
----------- Delete ToDo ----------
----------------------------------*/
+            /*---------------------------------
+            ---------- Accordion   ----------
+            ---------------------------------*/
 
             $('#accordion_task').append(todo_text);
 
@@ -218,14 +203,81 @@ $(document).ready(function () {
                     }
                 });
 
+            /*----------------swipe -------------------*/
+
+
+
+
+
 
             /*-------------------  prio farbe ------------*/
 
-            $('[data-prio="1"]').css({'background':'green'});
-            $('[data-prio="2"]').css({'background':'greenyellow'});
-            $('[data-prio="3"]').css({'background':'#ffff00'});
-            $('[data-prio="4"]').css({'background':'#ff8000'});
-            $('[data-prio="5"]').css({'background':'red'});
+            $('[data-prio="1"]').css({'background': 'green'});
+            $('[data-prio="2"]').css({'background': 'greenyellow'});
+            $('[data-prio="3"]').css({'background': '#ffff00'});
+            $('[data-prio="4"]').css({'background': '#ff8000'});
+            $('[data-prio="5"]').css({'background': 'red'});
+
+
+
+            /*-----------------  filter --------------------*/
+
+
+            $('#prio_choose1').on('click', function () {
+                if ($('#prio_choose1').is('input:checked')) {
+                    $('[data-prio="1"]').removeClass('prio_hide');
+                } else {
+
+                    $('[data-prio="1"]').addClass('prio_hide');
+                }
+            });
+
+
+            $('#prio_choose2').on('click', function () {
+                if ($('#prio_choose2').is('input:checked')) {
+                    $('[data-prio="2"]').removeClass('prio_hide');
+                } else {
+
+                    $('[data-prio="2"]').addClass('prio_hide');
+                }
+            });
+
+            $('#prio_choose3').on('click', function () {
+                if ($('#prio_choose3').is('input:checked')) {
+                    $('[data-prio="3"]').removeClass('prio_hide');
+                } else {
+
+                    $('[data-prio="3"]').addClass('prio_hide');
+                }
+            });
+
+            $('#prio_choose4').on('click', function () {
+                if ($('#prio_choose4').is('input:checked')) {
+                    $('[data-prio="4"]').removeClass('prio_hide');
+                } else {
+
+                    $('[data-prio="4"]').addClass('prio_hide');
+                }
+            });
+
+            $('#prio_choose5').on('click', function () {
+                if ($('#prio_choose5').is('input:checked')) {
+                    $('[data-prio="5"]').removeClass('prio_hide');
+                } else {
+
+                    $('[data-prio="5"]').addClass('prio_hide');
+                }
+            });
+
+
+            $('#prio_chooseDone').on('click', function () {
+                if ($('#prio_chooseDone').is('input:checked')) {
+                    $('[data-done="1"]').removeClass('prio_hide');
+                } else {
+
+                    $('[data-done="1"]').addClass('prio_hide');
+                }
+            });
 
 
             /*-------------------  Modification ------------*/
@@ -233,32 +285,41 @@ $(document).ready(function () {
             $('.edit').on('click', function () {
                 var that = $(this);
 
-                $('img.done').hide();
-                $('img.delete').hide();
-                $('img.edit').attr('src', "resources/img/save_black");
+                $(this).parent().siblings().hide();
+                $(this).attr('src', "resources/img/save_black.svg");
+                $(this).parent().parent().siblings().first().show();
+                console.log($(this).parent());
 
-                console.log('o');
-                $('.yes').on('click', function () {
-                    console.log('hadddddo');
-                    del_id = $(that).closest('.section').data('id');
-                    console.log(del_id);
-                    // $(that).closest('.accordion-toggle_task').css( "background-color", "red" );
-                    $(that).closest('.section').remove();
 
-                });
+                //closest('.section').data('id');
 
-                $('').on('click', function () {
 
+                //.css( "background-color", "red" );
+                // $('img.delete').hide();
+                // $('img.edit').attr('src', "resources/img/save_black.svg");
+
+                console.log('osdfsdsf');
+
+
+                $('.edit').on('click', function () {
+                    $(this).parent().parent().siblings().firstChild().hide();
+                    console.log('test')
                 });
             });
-
 
 
         }(i));
 
     }
 
+    $(this).on( "swipeleft", swipeleftHandler );
 
+    // Callback function references the event target and adds the 'swipeleft' class to it
+    function swipeleftHandler( event ){
+        $( event.target ).addClass( "swipeleft" );
+        console.log(receive_todo[i].id);
+        console.log('dadadada')
+    }
 })
 
 
