@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d72ab791-768f-45a6-8045-7359230bc879" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/jquery-ui.structure.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/jquery-ui.structure.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/jquery-ui.theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/jquery-ui.theme.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/ajax_dummy_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/ajax_dummy_data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/external/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/external/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/jquery.mobile.custom.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/jquery.mobile.custom.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/jquery.simplemodal.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/jquery.simplemodal.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,14 +27,14 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46140274">
+    <splitter split-orientation="horizontal" split-proportion="0.58524734">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="ajax_dummy_data.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/js/ajax_dummy_data.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="475">
-                  <caret line="324" column="41" lean-forward="true" selection-start-line="324" selection-start-column="41" selection-end-line="324" selection-end-column="41" />
+                <state relative-caret-position="325">
+                  <caret line="214" column="28" selection-start-line="214" selection-start-column="28" selection-end-line="214" selection-end-column="28" />
                 </state>
               </provider>
             </entry>
@@ -50,8 +42,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="703">
-                  <caret line="139" column="33" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="33" />
+                <state relative-caret-position="628">
+                  <caret line="115" column="7" selection-start-line="115" selection-start-column="7" selection-end-line="115" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -60,20 +52,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="25">
-                  <caret line="101" selection-start-line="106" selection-start-column="31" selection-end-line="106" selection-end-column="43" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="ajax_dummy_data.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/js/ajax_dummy_data.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="662">
-                  <caret line="168" column="50" selection-start-line="168" selection-start-column="28" selection-end-line="168" selection-end-column="50" />
+                <state relative-caret-position="762">
+                  <caret line="166" column="153" selection-start-line="166" selection-start-column="153" selection-end-line="166" selection-end-column="153" />
                 </state>
               </provider>
             </entry>
@@ -83,6 +66,15 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="488">
                   <caret line="66" column="95" lean-forward="true" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="95" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/css/style.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1500">
+                  <caret line="459" column="28" selection-start-line="459" selection-start-column="28" selection-end-line="459" selection-end-column="28" />
                 </state>
               </provider>
             </entry>
@@ -247,9 +239,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="Node.js.ajax_dummy_data.js" />
         <item itemvalue="JavaScript Debug.nochtest.html" />
         <item itemvalue="JavaScript Debug.test.html" />
-        <item itemvalue="Node.js.ajax_dummy_data.js" />
       </list>
     </recent_temporary>
   </component>
@@ -269,15 +261,15 @@
       <workItem from="1524326953508" duration="354000" />
       <workItem from="1524328066497" duration="16258000" />
       <workItem from="1524345526218" duration="61341000" />
-      <workItem from="1524501675876" duration="9094000" />
+      <workItem from="1524501675876" duration="18352000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96095000" />
+    <option name="totallyTimeSpent" value="105353000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="4" width="5133" height="1411" extended-state="0" />
+    <frame x="-7" y="4" width="2573" height="1411" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -286,13 +278,13 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.049083382" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09908476" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3298887" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="CSS-X-Fire" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.0" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3296" />
       <window_info anchor="bottom" id="CSS Styles" order="8" weight="0.32964426" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -466,20 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="353" column="33" selection-start-line="353" selection-start-column="33" selection-end-line="353" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="139" column="33" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="488">
@@ -487,10 +465,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="459" column="28" selection-start-line="459" selection-start-column="28" selection-end-line="459" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="115" column="7" selection-start-line="115" selection-start-column="7" selection-end-line="115" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/ajax_dummy_data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="324" column="41" lean-forward="true" selection-start-line="324" selection-start-column="41" selection-end-line="324" selection-end-column="41" />
+        <state relative-caret-position="325">
+          <caret line="214" column="28" selection-start-line="214" selection-start-column="28" selection-end-line="214" selection-end-column="28" />
         </state>
       </provider>
     </entry>

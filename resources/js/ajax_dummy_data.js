@@ -162,6 +162,8 @@ $(document).ready(function () {
                 
                             <span class="make_edit"><img class="button_img edit" src="resources/img/inclined-pencil.svg" alt="edit" title="Modify your Task"></span>
 
+                            <span class="make_save"><img class="button_img save prio_hide" src="resources/img/save_black.svg" alt="edit" title="Modify your Task"></span>
+                            
                             <span class="make_delete"><img class="button_img delete" src="resources/img/garbage.svg" alt="delete" title="Delete your Task"></span>
                         </span>
                     </span>
@@ -203,11 +205,23 @@ $(document).ready(function () {
 
 
             /*------------------ SWIPE Start -------------------*/
-            $(this)
+            $('section')
+                .find('.accordion-toggle_task')
                 .on('swipeleft', function () {
-                    console.log(this);
-                    $(this).closest('h4').css("background-color", "gray");
+
+                    $(this).css("background-color", "gray");
+
+                    $(this).next().css({"background-color": "rgb(180, 180, 180)"});
+                    $(this).attr('data-done', 1).find('.done').remove();
                 });
+
+
+            // $('#accordion_task')
+            //     .find('.section')
+            //     .on('swipeleft', function () {
+            //
+            //
+            //     });
             /*------------------ SWIPE Start -------------------*/
 
 
@@ -217,63 +231,70 @@ $(document).ready(function () {
             $('[data-prio="3"]').css({'background': '#ffff00'});
             $('[data-prio="4"]').css({'background': '#ff8000'});
             $('[data-prio="5"]').css({'background': 'red'});
+            $('[data-done="1"]').css({'background': 'gray'});
+
+            if ($('[data-done="1"]')) {
+                $('[data-done="1"]').siblings().css({"background-color": "rgb(180, 180, 180)"}).find('.done').remove();
+                $('[data-done="1"]').find('.done').remove();
+            }
+            ;
             /*------------------ PRIO COLOR End ------------*/
 
 
             /*------------------ FILTER Start --------------------*/
             $('#prio_choose1').on('click', function () {
                 if ($('#prio_choose1').is('input:checked')) {
-                    $('[data-prio="1"]').removeClass('prio_hide');
+                    $('[data-prio="1"]').parent().removeClass('prio_hide');
                 } else {
 
-                    $('[data-prio="1"]').addClass('prio_hide');
+                    $('[data-prio="1"]').parent().addClass('prio_hide');
                 }
             });
 
 
             $('#prio_choose2').on('click', function () {
                 if ($('#prio_choose2').is('input:checked')) {
-                    $('[data-prio="2"]').removeClass('prio_hide');
+                    $('[data-prio="2"]').parent().removeClass('prio_hide');
                 } else {
 
-                    $('[data-prio="2"]').addClass('prio_hide');
+                    $('[data-prio="2"]').parent().addClass('prio_hide');
                 }
             });
 
             $('#prio_choose3').on('click', function () {
                 if ($('#prio_choose3').is('input:checked')) {
-                    $('[data-prio="3"]').removeClass('prio_hide');
+                    $('[data-prio="3"]').parent().removeClass('prio_hide');
                 } else {
 
-                    $('[data-prio="3"]').addClass('prio_hide');
+                    $('[data-prio="3"]').parent().addClass('prio_hide');
                 }
             });
 
             $('#prio_choose4').on('click', function () {
                 if ($('#prio_choose4').is('input:checked')) {
-                    $('[data-prio="4"]').removeClass('prio_hide');
+                    $('[data-prio="4"]').parent().removeClass('prio_hide');
                 } else {
 
-                    $('[data-prio="4"]').addClass('prio_hide');
+                    $('[data-prio="4"]').parent().addClass('prio_hide');
                 }
             });
 
             $('#prio_choose5').on('click', function () {
                 if ($('#prio_choose5').is('input:checked')) {
-                    $('[data-prio="5"]').removeClass('prio_hide');
+                    $('[data-prio="5"]').parent().removeClass('prio_hide');
                 } else {
 
-                    $('[data-prio="5"]').addClass('prio_hide');
+                    $('[data-prio="5"]').parent().addClass('prio_hide');
                 }
             });
 
 
             $('#prio_chooseDone').on('click', function () {
                 if ($('#prio_chooseDone').is('input:checked')) {
-                    $('[data-done="1"]').removeClass('prio_hide');
+                    $('[data-done="1"]').parent().removeClass('prio_hide');
                 } else {
 
-                    $('[data-done="1"]').addClass('prio_hide');
+                    $('[data-done="1"]').parent().addClass('prio_hide');
                 }
             });
             /*------------------ FILTER End --------------------*/
@@ -282,122 +303,181 @@ $(document).ready(function () {
             /*------------------ MODIFICATION Start ------------*/
             $('#accordion_task')
                 .find('.section')
-                .on('click', function () {
-                    var modId;
-                    var modTask;
+                .on('click', function (event) {
 
-                    var tempTime;
-                    var tempTimeArray;
-                    var htmlString;
+                    var target = $(event.target);
 
-                    modId = $(this).data('id');
-                    $(this)
-                        .find('.make_task')
-                        .attr('contenteditable', 'true')
-                        .css({'padding': '15px', 'background-color': 'white'});
-
-                    $(this)
-                        .find('.prio_hide')
-                        .show();
-
-                    $(this)
-                        .find('.make_prio')
-                        .attr('contenteditable', 'true')
-                        .css({'padding': '15px', 'background-color': 'white'});
-
-                    $(this)
-                        .find('.make_categories')
-                        .attr('contenteditable', 'true')
-                        .css({'padding': '15px', 'background-color': 'white'});
-
-                    $(this)
-                        .find('.make_time')
-                        .attr('contenteditable', 'true')
-                        .css({'padding': '15px', 'background-color': 'white'});
+                    if (target.is('.edit')) {
 
 
-                    $(this)
-                        .find('.accordion-content_task p')
-                        .attr('contenteditable', 'true')
-                        .css({'border': '1px solid black', 'padding': '15px', 'background-color': 'white'});
+                        $(this)
+                            .find('.make_task')
+                            .attr('contenteditable', 'true')
+                            .css({'padding': '15px', 'background-color': 'white'});
 
-                    $(this)
-                        .find('.make_time')
-                        .attr('contenteditable', 'true')
-                        .css({'padding': '15px', 'background-color': 'white'});
+                        $(this)
+                            .find('.prio_hide')
+                            .show();
 
-                    // var that = $(this);
-                    // htmlString = '';
-                    //
-                    //
-                    // if (htmlString === '') {
-                    //     tempTime = $(this)
-                    //         .find('.make_time')
-                    //         .html();
-                    //
-                    //
-                    //
-                    //     tempTimeArray = tempTime.split('.');
-                    //      tempTimeArray.reverse();
-                    //      tempTime = tempTimeArray.join('-');
-                    //     htmlString = '<input type="date" value="';
-                    //     htmlString += tempTime;
-                    //     htmlString += '">';
-                    //     $(this)
-                    //         .find('.make_time')
-                    //         .html(htmlString);
-                    // }
+                        $(this)
+                            .find('.make_prio')
+                            .attr('contenteditable', 'true')
+                            .css({'padding': '15px', 'background-color': 'white'});
 
-                    //console.log('htmlstring', htmlString);
+                        $(this)
+                            .find('.make_categories')
+                            .attr('contenteditable', 'true')
+                            .css({'padding': '15px', 'background-color': 'white'});
 
-                    //.css({"color": "red", "border": "2px solid red"})
+                        $(this)
+                            .find('.make_time')
+                            .attr('contenteditable', 'true')
+                            .css({'padding': '15px', 'background-color': 'white'});
 
 
-                    console.log('modId', modId);
-                    //.attr('src', "resources/img/save_black.svg");
+                        $(this)
+                            .find('.accordion-content_task p')
+                            .attr('contenteditable', 'true')
+                            .css({'border': '1px solid black', 'padding': '15px', 'background-color': 'white'});
 
-                    $(this).closest('.done').hide();
-
-                    $('#accordion_task')
-                        .find('.delete').hide();
-
-                    /* var that = $(this);
-
-                    $(this).parent().siblings().hide();
-                    $(this).attr('src', "resources/img/save_black.svg");
-                    $(this).parent().parent().siblings().first().show();
-                    console.log($(this).parent());
+                        $(this)
+                            .find('.make_time')
+                            .attr('contenteditable', 'true')
+                            .css({'padding': '15px', 'background-color': 'white'});
 
 
-                    //closest('.section').data('id');
+                        $(this)
+                            .find('.done')
+                            .hide();
 
 
-                    //.css( "background-color", "red" );
-                    // $('img.delete').hide();
-                    // $('img.edit').attr('src', "resources/img/save_black.svg");
-
-                    console.log('osdfsdsf');
+                        $(this)
+                            .find('.edit').hide();
 
 
-                    $('.edit').on('click', function () {
-                        $(this).parent().parent().siblings().firstChild().hide();
-                        console.log('test')
-                    }); */
+                        $(this)
+                            .find('.delete')
+                            .hide();
 
+                    }
                 });
             /*------------------ MODIFICATION End ------------*/
+
+
+            /*------------------ SAVE End ------------*/
+
+            $('#accordion_task')
+                .find('.section')
+                .on('click', function (event) {
+
+                    var target = $(event.target);
+
+                    if (target.is('.save')) {
+
+                        console.log('save')
+                        var modId;
+                        var modTask;
+
+                        var tempTime;
+                        var tempTimeArray;
+                        var htmlString;
+
+                        modId = $(this).data('id');
+
+
+                        modTask = $(this)
+                            .find('.make_task').html();
+
+                        $(this)
+                            .find('.make_task')
+                            .attr('contenteditable', 'false')
+                            .css({'padding': '', 'background-color': ''});
+
+
+
+                        $(this)
+                            .find('.prio_hide')
+                            .hide();
+
+
+                        var modPrio = $(this)
+                            .find('.make_prio')
+                            .html();
+
+                        $(this)
+                            .find('.make_prio')
+                            .attr('contenteditable', 'false')
+                            .css({'padding': '', 'background-color': ''});
+
+
+                       var modKat = $(this)
+                            .find('.make_categories')
+                            .html();
+
+                        $(this)
+                            .find('.make_categories')
+                            .attr('contenteditable', 'false')
+                            .css({'padding': '', 'background-color': ''});
+
+
+
+                        var modTime = $(this)
+                            .find('.make_time')
+                            .html();
+
+                        $(this)
+                            .find('.make_time')
+                            .attr('contenteditable', 'false')
+                            .css({'padding': '', 'background-color': ''});
+
+
+                       var modCom = $(this)
+                            .find('.accordion-content_task p')
+                            .html();
+
+                        $(this)
+                            .find('.accordion-content_task p')
+                            .attr('contenteditable', 'false')
+                            .css({'border': '', 'padding': '', 'background-color': ''});
+
+
+                        // $(this)
+                        //     .find('.make_time')
+                        //     .attr('contenteditable', 'true')
+                        //     .css({'padding': '15px', 'background-color': 'white'});
+
+                        console.log(modCom);
+
+                        $(this)
+                            .find('.done')
+                            .show();
+
+
+                        $(this)
+                            .find('.edit').show();
+
+
+                        $(this)
+                            .find('.delete')
+                            .show();
+
+                    }
+                });
+
+            /*------------------ SAVE End ------------*/
 
 
             /*------------------ DONE Start ------------*/
             $('#accordion_task')
                 .find('.done')
                 .on('click', function () {
-
+                    $(this)
+                        .hide();
                     $(this).parent().parent().parent().parent().css("background-color", "gray");
                     var doneId = $(this).parent().parent().parent().parent().parent().data('id');
-                    var doneId = $(this).parent().parent().parent().parent().next().css({"background-color": "rgb(180, 180, 180)"});
+                    $(this).parent().parent().parent().parent().next().css({"background-color": "rgb(180, 180, 180)"});
                     console.log(doneId);
-
+                    $(this).parent().parent().parent().parent().attr('data-done', 1);
                 });
             /*------------------ DONE End ------------*/
 

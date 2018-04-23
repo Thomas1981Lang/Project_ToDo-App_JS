@@ -340,7 +340,6 @@ fieldset input {
     width: 100%;
 }
 
-
 .selection_form {
     width: 100%;
     display: flex;
@@ -369,7 +368,6 @@ fieldset input {
 
 }
 
-
 .checkbox {
     margin-right: 20px;
 }
@@ -380,7 +378,6 @@ fieldset input {
 .task {
     padding-top: 20px;
 }
-
 
 .accordion-toggle_task {
     margin: 0;
@@ -449,7 +446,6 @@ fieldset input {
 
 }
 
-
 .prio_hide {
     display: none;
 }
@@ -457,6 +453,13 @@ fieldset input {
 .prio_show {
     display: block;
 }
+
+.edit_task {
+    border: 1px solid black;
+    padding: 15px;
+    background-color: white;
+}
+
 /***************************
 ***** FOOTER - SECTION *****
 ***************************/
@@ -490,12 +493,9 @@ footer {
     padding: 12px;
 }
 
-
-
 #simplemodal-container .simplemodal-data {
     padding: 8px;
 }
-
 
 #simplemodal-container a {
     color: #ddd;
