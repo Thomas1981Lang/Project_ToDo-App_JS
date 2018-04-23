@@ -351,6 +351,7 @@ fieldset input {
     border-radius: 0;
     height: 40px;
     background: green;
+    box-shadow: 0 3px 0 lightgray;
 }
 
 .selection_form label {
@@ -376,6 +377,10 @@ fieldset input {
 /*****************************
 ******** TASK - SECTION ******
 *****************************/
+.task {
+    padding-top: 20px;
+}
+
 
 .accordion-toggle_task {
     margin: 0;
