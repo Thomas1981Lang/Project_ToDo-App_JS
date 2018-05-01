@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d72ab791-768f-45a6-8045-7359230bc879" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/ajax_dummy_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/ajax_dummy_data.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,14 +27,14 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.58524734">
+    <splitter split-orientation="horizontal" split-proportion="0.5022144">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="ajax_dummy_data.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/js/ajax_dummy_data.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="325">
-                  <caret line="214" column="28" selection-start-line="214" selection-start-column="28" selection-end-line="214" selection-end-column="28" />
+                <state relative-caret-position="550">
+                  <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
                 </state>
               </provider>
             </entry>
@@ -42,8 +42,17 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="628">
-                  <caret line="115" column="7" selection-start-line="115" selection-start-column="7" selection-end-line="115" selection-end-column="7" />
+                <state relative-caret-position="325">
+                  <caret line="139" column="31" lean-forward="true" selection-start-line="139" selection-start-column="17" selection-end-line="139" selection-end-column="31" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="server_todo.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server_todo.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="877">
+                  <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
@@ -52,29 +61,20 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ajax_dummy_data.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/resources/js/ajax_dummy_data.js">
+          <file leaf-file-name="todo.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/js/todo.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="762">
-                  <caret line="166" column="153" selection-start-line="166" selection-start-column="153" selection-end-line="166" selection-end-column="153" />
+                <state relative-caret-position="1825">
+                  <caret line="73" selection-start-line="55" selection-end-line="73" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test.html">
+          <file leaf-file-name="todo.json" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/todo.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="488">
-                  <caret line="66" column="95" lean-forward="true" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="95" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/css/style.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1500">
-                  <caret line="459" column="28" selection-start-line="459" selection-start-column="28" selection-end-line="459" selection-end-column="28" />
+                <state>
+                  <caret column="9" selection-start-column="9" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -100,6 +100,9 @@
       <find>deleteei</find>
       <find>selec</find>
       <find>none</find>
+      <find>alleOrte</find>
+      <find>orte</find>
+      <find>node</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -115,6 +118,8 @@
         <option value="$PROJECT_DIR$/Schnittstellenbeschreibung.txt" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/resources/css/style.css" />
+        <option value="$PROJECT_DIR$/todo.json" />
+        <option value="$PROJECT_DIR$/server_todo.js" />
         <option value="$PROJECT_DIR$/resources/js/ajax_dummy_data.js" />
       </list>
     </option>
@@ -140,6 +145,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -156,40 +162,12 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="aufgabe_20180410_-_ToDo_APP" type="cbb8eebc:String" user="aufgabe_20180410_-_ToDo_APP" />
               <item name="resources" type="cbb8eebc:String" user="resources" />
-              <item name="css" type="cbb8eebc:String" user="css" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="aufgabe_20180410_-_ToDo_APP" type="cbb8eebc:String" user="aufgabe_20180410_-_ToDo_APP" />
-              <item name="resources" type="cbb8eebc:String" user="resources" />
-              <item name="img" type="cbb8eebc:String" user="img" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="aufgabe_20180410_-_ToDo_APP" type="cbb8eebc:String" user="aufgabe_20180410_-_ToDo_APP" />
-              <item name="resources" type="cbb8eebc:String" user="resources" />
               <item name="js" type="cbb8eebc:String" user="js" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="aufgabe_20180410_-_ToDo_APP" type="cbb8eebc:String" user="aufgabe_20180410_-_ToDo_APP" />
-              <item name="resources" type="cbb8eebc:String" user="resources" />
-              <item name="js" type="cbb8eebc:String" user="js" />
-              <item name="external" type="cbb8eebc:String" user="external" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="aufgabe_20180410_-_ToDo_APP" type="cbb8eebc:String" user="aufgabe_20180410_-_ToDo_APP" />
-              <item name="resources" type="cbb8eebc:String" user="resources" />
-              <item name="js" type="cbb8eebc:String" user="js" />
-              <item name="external" type="cbb8eebc:String" user="external" />
-              <item name="jquery" type="cbb8eebc:String" user="jquery" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -203,14 +181,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\t_l\git\WDJS\aufgabe_20180410_-_ToDo_APP\resources\img" />
+      <recent name="C:\Users\t_l\git\WDJS\aufgabe_20180410_-_ToDo_APP\resources\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\t_l\git\WDJS\aufgabe_20180410_-_ToDo_APP\resources\js" />
       <recent name="C:\Users\t_l\git\WDJS\aufgabe_20180410_-_ToDo_APP\resources\css" />
       <recent name="C:\Users\t_l\git\WDJS\aufgabe_20180410_-_ToDo_APP\resources\img" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\t_l\git\WDJS\aufgabe_20180410_-_ToDo_APP\resources\img" />
-      <recent name="C:\Users\t_l\git\WDJS\aufgabe_20180410_-_ToDo_APP\resources\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -261,12 +239,15 @@
       <workItem from="1524326953508" duration="354000" />
       <workItem from="1524328066497" duration="16258000" />
       <workItem from="1524345526218" duration="61341000" />
-      <workItem from="1524501675876" duration="18352000" />
+      <workItem from="1524501675876" duration="19019000" />
+      <workItem from="1524775808854" duration="10000" />
+      <workItem from="1525163693736" duration="669000" />
+      <workItem from="1525170669293" duration="13255000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105353000" />
+    <option name="totallyTimeSpent" value="119954000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="4" width="2573" height="1411" extended-state="0" />
@@ -275,16 +256,17 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09908476" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10147234" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3298887" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3296" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="CSS-X-Fire" />
+      <window_info anchor="bottom" id="CSS-X-Fire" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3296" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3296" />
       <window_info anchor="bottom" id="CSS Styles" order="8" weight="0.32964426" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -292,7 +274,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32964426" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +282,96 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2875">
+          <caret line="115" column="7" selection-start-line="115" selection-start-column="7" selection-end-line="115" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/ajax_dummy_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4175">
+          <caret line="167" column="153" selection-start-line="167" selection-start-column="153" selection-end-line="167" selection-end-column="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="66" column="95" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11475">
+          <caret line="459" column="28" selection-start-line="459" selection-start-column="28" selection-end-line="459" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2875">
+          <caret line="115" column="7" selection-start-line="115" selection-start-column="7" selection-end-line="115" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/ajax_dummy_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4175">
+          <caret line="167" column="153" selection-start-line="167" selection-start-column="153" selection-end-line="167" selection-end-column="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="66" column="95" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11475">
+          <caret line="459" column="28" selection-start-line="459" selection-start-column="28" selection-end-line="459" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2875">
+          <caret line="115" column="7" selection-start-line="115" selection-start-column="7" selection-end-line="115" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/ajax_dummy_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4175">
+          <caret line="167" column="153" selection-start-line="167" selection-start-column="153" selection-end-line="167" selection-end-column="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="66" column="95" lean-forward="true" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11475">
+          <caret line="459" column="28" selection-start-line="459" selection-start-column="28" selection-end-line="459" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/ajax_dummy_data.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8175">
@@ -444,13 +514,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/nochtest.html" />
-    <entry file="file://$PROJECT_DIR$/resources/js/todo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1825">
-          <caret line="73" selection-start-line="55" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Schnittstellenbeschreibung.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
@@ -460,29 +523,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="66" column="95" lean-forward="true" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="95" />
+        <state relative-caret-position="740">
+          <caret line="66" column="95" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="95" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
+        <state relative-caret-position="740">
           <caret line="459" column="28" selection-start-line="459" selection-start-column="28" selection-end-line="459" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/todo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1825">
+          <caret line="73" selection-start-line="55" selection-end-line="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="115" column="7" selection-start-line="115" selection-start-column="7" selection-end-line="115" selection-end-column="7" />
+        <state relative-caret-position="325">
+          <caret line="139" column="31" lean-forward="true" selection-start-line="139" selection-start-column="17" selection-end-line="139" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server_todo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="877">
+          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/ajax_dummy_data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="214" column="28" selection-start-line="214" selection-start-column="28" selection-end-line="214" selection-end-column="28" />
+        <state relative-caret-position="550">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>
     </entry>
