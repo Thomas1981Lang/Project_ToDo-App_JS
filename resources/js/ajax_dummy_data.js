@@ -10,7 +10,7 @@ var order;
 var timestamp = function () {
     var d = new Date();
     var n = d.getTime();
-    console.log(n);
+
     return n;
 }
 
@@ -19,19 +19,18 @@ var timestamp = function () {
 ---------- Sortiere ToDO ----------
 ---------------------------------*/
 order = $('#sortieren').val();
-console.log(order, 'order')
 
-
-$('.selection_form').on('change', function () {
+$('#sortieren').on('change', function (event) {
+    event.preventDefault();
     order = $('#sortieren').val();
     $.ajax({
         url: 'http://localhost:5000/zeigetodo',
         method: 'POST',
         data: {
             order: order
-        },
-        success: makeList()
+        }
     })
+         makeList()
 
 });
 
@@ -206,7 +205,6 @@ var makeList = function () {
 
                             if (target.is('.save')) {
 
-                                console.log('save')
                                 var modId;
                                 var modTask;
 
@@ -337,7 +335,7 @@ var makeList = function () {
                             $(this).parent().parent().parent().parent().css("background-color", "gray");
                             var doneId = $(this).parent().parent().parent().parent().parent().data('id');
                             $(this).parent().parent().parent().parent().next().css({"background-color": "rgb(180, 180, 180)"});
-                            console.log(doneId);
+
                             $(this).parent().parent().parent().parent().attr('data-done', 1);
 
                             tempTime = timestamp()
@@ -359,14 +357,13 @@ var makeList = function () {
                         var that = $(this);
                         $('.dialog').modal();
 
-                            console.log(i);
+
 
                         $('.yes').on('click', function () {
                             tempTime = timestamp()
 
                             del_id = $(that).closest('.section').data('id');
 
-                            console.log(del_id);
                             // $(that).closest('.accordion-toggle_task').css( "background-color", "red" );
                             $(that).closest('.section').remove();
                             $.ajax({
@@ -377,7 +374,7 @@ var makeList = function () {
                                     timestamp: tempTime
                                 }
                             });
-                            console.log(timestamp());
+
 
                             $.modal.close();
                         });
@@ -391,10 +388,8 @@ var makeList = function () {
                     /*------------------ FILTER Start --------------------*/
                     $('#prio_choose1').on('click', function () {
                         if ($('#prio_choose1').is('input:checked')) {
-                            console.log('hallo')
                             $('[data-prio="1"]').parent().removeClass('prio_hide');
                         } else {
-                            console.log('hmm')
                             $('[data-prio="1"]').parent().addClass('prio_hide');
                         }
                     });
@@ -447,9 +442,6 @@ var makeList = function () {
                     });
                     /*------------------ FILTER End --------------------*/
 
-
-
-
                 }(i));
             }
         }
@@ -477,7 +469,7 @@ $('#input_submit').on('click', function (event) {
         timedone: '',
         done: 0
     }
-    console.log(neuerEintrag);
+
     $.ajax({
         url: 'http://localhost:5000/todo',
         method: 'POST',

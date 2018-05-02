@@ -10,22 +10,17 @@ app.listen(5000,function() {
   console.log( 'Server gestartet, Port 5000'  );
 });
 
-// sieh nach ob angefragte Datei im Ordner "static" liegt
-// für statische Ressourcen (JS, CSS, Images, usw)
 app.use( express.static('.' ) );
 
-//wandelt POST-Daten in JS-Objekt request.body um
 app.use( bp.urlencoded({extended:true} ));
 
-// Request Daten werden als JSON mitgeschickt
-// app.use( bp.json() );
 
-var toDoS; //globale Variable
+var toDoS;
 fs.readFile( 'todo.json', function(err,data) {
-  //console.log( data.toString() ); Inhalt der Datei als String
+
   try {
     toDoS = JSON.parse(data); // wandle Inhalt in Objekt um
-    console.log( 'initial load data', toDoS.todo ); // Zeige ToDo Array
+    console.log( 'initial load data', toDoS.todo );
   } catch(e) {
     console.log( 'todo.json ist fehlerhaft!' );
     toDoS = {todo:[]}; // Fallback wenn JSON-File fehlerhaft
@@ -48,14 +43,12 @@ app.post( '/todo', function( request, response) {
   }
 
   if ( neuerToDo.task && neuerToDo.option && neuerToDo.date && neuerToDo.prio ) {
-    // Daten speichern
     toDoS.todo.push( neuerToDo );
     fs.writeFile( 'todo.json', JSON.stringify(toDoS), function(){
       response.writeHead(200,{'Content-Type':'application/json'});
       response.end( JSON.stringify({result:true}));
     });
   } else {
-    // Error
     response.status(500).end();
   }
 });
@@ -69,7 +62,6 @@ app.post( '/zeigetodo', function(request,response) {
         order: request.body.order
     }
 
-    console.log(sort);
   sortBy(toDoS.todo, [sort.order, 'timecreate']);
   response.end( JSON.stringify(toDoS));
 });
@@ -83,13 +75,8 @@ app.post( '/delete', function( request, response) {
         timestamp: request.body.timestamp
     }
 
-    console.log(deleteid.timestamp,'vor delete')
-    console.log(tempStamp,'vor delete')
-
     if (deleteid.timestamp > tempStamp) {
-     tempStamp = deleteid.timestamp * 1 + 10;
-    console.log(deleteid.timestamp,'in abfrage')
-        // Daten speichern
+     tempStamp = deleteid.timestamp * 1 + 8;
         toDoS.todo.splice( deleteid.id, 1 );
         fs.writeFile( 'todo.json', JSON.stringify(toDoS), function(){
             response.writeHead(200,{'Content-Type':'application/json'});
@@ -108,17 +95,13 @@ app.post( '/done', function( request, response) {
         timestamp: request.body.timestamp
     }
 
-    console.log(doneid.timestamp,'vor done')
-    console.log(tempStamp,'vor done')
-    console.log(toDoS.todo[doneid.id],'done id')
-
 
     if (doneid.timestamp > tempStamp) {
         tempStamp = doneid.timestamp * 1 + 10;
-        console.log(doneid.timestamp,'in abfrage')
+
         // Daten speichern
         toDoS.todo[doneid.id].done = 1;
-        console.log(toDoS.todo[doneid.id]);
+
         fs.writeFile( 'todo.json', JSON.stringify(toDoS), function(){
             response.writeHead(200,{'Content-Type':'application/json'});
             response.end( JSON.stringify({result:true}));
@@ -141,22 +124,16 @@ app.post( '/edit', function( request, response) {
         timestamp: request.body.timestamp
     }
 
-    //console.log(doneid.timestamp,'vor done')
-    //console.log(tempStamp,'vor done')
-    //console.log(toDoS.todo[doneid.id],'done id')
-
-
     if (edit.timestamp > tempStamp) {
         tempStamp = edit.timestamp * 1 + 10;
-        console.log(edit.timestamp,'in abfrage')
+
         // Daten speichern
         toDoS.todo[edit.id].task = edit.task;
         toDoS.todo[edit.id].comment = edit.comment;
         toDoS.todo[edit.id].option = edit.option;
         toDoS.todo[edit.id].date = edit.date;
         toDoS.todo[edit.id].prio = edit.prio;
-        console.log(edit);
-        console.log(toDoS.todo[edit.id].task);
+
         fs.writeFile( 'todo.json', JSON.stringify(toDoS), function(){
             response.writeHead(200,{'Content-Type':'application/json'});
             response.end( JSON.stringify({result:true}));
