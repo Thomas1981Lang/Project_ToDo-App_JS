@@ -24,7 +24,6 @@ console.log(order, 'order')
 
 $('.selection_form').on('change', function () {
     order = $('#sortieren').val();
-    var sortTabelle = $('#sortieren').val();
     $.ajax({
         url: 'http://localhost:5000/zeigetodo',
         method: 'POST',
@@ -130,63 +129,7 @@ var makeList = function () {
                     /*------------------ PRIO COLOR End ------------*/
 
 
-                    /*------------------ FILTER Start --------------------*/
-                    $('#prio_choose1').on('click', function () {
-                        if ($('#prio_choose1').is('input:checked')) {
-                            $('[data-prio="1"]').parent().removeClass('prio_hide');
-                        } else {
 
-                            $('[data-prio="1"]').parent().addClass('prio_hide');
-                        }
-                    });
-
-
-                    $('#prio_choose2').on('click', function () {
-                        if ($('#prio_choose2').is('input:checked')) {
-                            $('[data-prio="2"]').parent().removeClass('prio_hide');
-                        } else {
-
-                            $('[data-prio="2"]').parent().addClass('prio_hide');
-                        }
-                    });
-
-                    $('#prio_choose3').on('click', function () {
-                        if ($('#prio_choose3').is('input:checked')) {
-                            $('[data-prio="3"]').parent().removeClass('prio_hide');
-                        } else {
-
-                            $('[data-prio="3"]').parent().addClass('prio_hide');
-                        }
-                    });
-
-                    $('#prio_choose4').on('click', function () {
-                        if ($('#prio_choose4').is('input:checked')) {
-                            $('[data-prio="4"]').parent().removeClass('prio_hide');
-                        } else {
-
-                            $('[data-prio="4"]').parent().addClass('prio_hide');
-                        }
-                    });
-
-                    $('#prio_choose5').on('click', function () {
-                        if ($('#prio_choose5').is('input:checked')) {
-                            $('[data-prio="5"]').parent().removeClass('prio_hide');
-                        } else {
-
-                            $('[data-prio="5"]').parent().addClass('prio_hide');
-                        }
-                    });
-
-
-                    $('#prio_chooseDone').on('click', function () {
-                        if ($('#prio_chooseDone').is('input:checked')) {
-                            $('[data-done="1"]').parent().removeClass('prio_hide');
-                        } else {
-
-                            $('[data-done="1"]').parent().addClass('prio_hide');
-                        }
-                    });
-                    /*------------------ FILTER End --------------------*/
 
 
                     /*------------------ MODIFICATION Start ------------*/
@@ -443,6 +386,69 @@ var makeList = function () {
                             $.modal.close();
                         });
                     });
+
+
+                    /*------------------ FILTER Start --------------------*/
+                    $('#prio_choose1').on('click', function () {
+                        if ($('#prio_choose1').is('input:checked')) {
+                            console.log('hallo')
+                            $('[data-prio="1"]').parent().removeClass('prio_hide');
+                        } else {
+                            console.log('hmm')
+                            $('[data-prio="1"]').parent().addClass('prio_hide');
+                        }
+                    });
+
+
+                    $('#prio_choose2').on('click', function () {
+                        if ($('#prio_choose2').is('input:checked')) {
+                            $('[data-prio="2"]').parent().removeClass('prio_hide');
+                        } else {
+
+                            $('[data-prio="2"]').parent().addClass('prio_hide');
+                        }
+                    });
+
+                    $('#prio_choose3').on('click', function () {
+                        if ($('#prio_choose3').is('input:checked')) {
+                            $('[data-prio="3"]').parent().removeClass('prio_hide');
+                        } else {
+
+                            $('[data-prio="3"]').parent().addClass('prio_hide');
+                        }
+                    });
+
+                    $('#prio_choose4').on('click', function () {
+                        if ($('#prio_choose4').is('input:checked')) {
+                            $('[data-prio="4"]').parent().removeClass('prio_hide');
+                        } else {
+
+                            $('[data-prio="4"]').parent().addClass('prio_hide');
+                        }
+                    });
+
+                    $('#prio_choose5').on('click', function () {
+                        if ($('#prio_choose5').is('input:checked')) {
+                            $('[data-prio="5"]').parent().removeClass('prio_hide');
+                        } else {
+
+                            $('[data-prio="5"]').parent().addClass('prio_hide');
+                        }
+                    });
+
+
+                    $('#prio_chooseDone').on('click', function () {
+                        if ($('#prio_chooseDone').is('input:checked')) {
+                            $('[data-done="1"]').parent().removeClass('prio_hide');
+                        } else {
+
+                            $('[data-done="1"]').parent().addClass('prio_hide');
+                        }
+                    });
+                    /*------------------ FILTER End --------------------*/
+
+
+
 
                 }(i));
             }

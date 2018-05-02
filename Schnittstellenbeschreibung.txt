@@ -1,113 +1,130 @@
-ToDo-App
+﻿ToDo-App
 Schnittstellenbeschreibung
 
-URL: http://localhost/todo.php
+1.) REQUEST UserInterface 
+URL: http://localhost:5000/
+Method:GET
+Response-Format: HTML
 
-1.) Neuer Eintrag
+2.) REQUEST Neuer Eintrag/Speichern
+
+URL: http://localhost:5000/todo
 REQUEST-Methode: POST
-Format Daten: JSON
+Format Daten: POST
+
 Daten:
 {
-typ: 'neu',
-task: STRING
- comment: STRING
-option: STRING
-date: DATE
-prio: INTEGER[1,5]
+	task: STRING
+    	comment: STRING
+    	option: STRING
+    	date: DATE
+    	prio: INTEGER
+    	timecreate: INTEGER
+    	timedone: INTEGER
+      	done: BOOLEAN
 }
 
-RESPONSE
-Format-Daten: JSON
 
-Fehler:
-{
-  fehlernummer: INTEGER,
-  feldname (Optional): STRING
-}
+Response Success
+HTTPCode: 200
+{"result":true}
+
+
+Response Error
+HTTPCode 500
+
+
 
 2.) ToDo-Liste erhalten
 
+URL: http://localhost:5000/zeigetodo
 REQUEST-Methode: POST
-Format Daten: JSON
+Format Daten: POST
+
 Daten:
 {
-  typ: 'get'
+  order: STRING
 }
 
-RESPONSE
-Format-Daten: JSON
+Response Success
+HTTPCode: 200
+{
+  "todo": [
+    {
+     task: STRING
+    	comment: STRING
+    	option: STRING
+    	date: DATE
+    	prio: INTEGER
+    	timecreate: INTEGER
+    	timedone: INTEGER
+      	done: BOOLEAN
+    },...
+  ]
+}
+
+
+3.) Delete
+
+URL: http://localhost:5000/delete
 REQUEST-Methode: POST
+Format Daten: POST
+
 Daten:
 {
-  id: STRING,
-  task: STRING,
-  comment: STRING,
-  option:INTEGER,
-  date: INTEGER,
-  prio: INTEGER,
-  done: BOOLEAN
+  	id: INTEGER
+      	timestamp: INTEGER
 }
 
+Response Success
+HTTPCode: 200
+{"result":true}
 
-3.) Sortierte ToDo-Liste
 
+Response Error
+HTTPCode 500
+
+
+
+
+4.) Done
+
+URL: http://localhost:5000/done
 REQUEST-Methode: POST
-Format Daten: JSON
+Format Daten: POST
+
 Daten:
 {
-  typ: 'sortieren'
-  art: STRING
+id: INTEGER
+timestamp: INTEGER
 }
 
-RESPONSE
-Format-Daten: JSON
+Response Success
+HTTPCode: 200
+{"result":true}
+
+
+Response Error
+HTTPCode 500
+
+
+5.) Eintrag bearbeiten
 REQUEST-Methode: POST
+Format Daten: POST
 Daten:
 {
-  id: STRING,
-  task: STRING,
-  comment: STRING,
-  option:INTEGER,
-  date: INTEGER,
-  prio: INTEGER
-}
+       id: INTEGER
+        task: STRING
+        comment: STRING
+        option: STRING
+        date: DATE
+        prio: INTEGER
+        timestamp: INTEGER
+
+Response Success
+HTTPCode: 200
+{"result":true}
 
 
-4.) Eintrag bearbeiten
-REQUEST-Methode: POST
-Format Daten: JSON
-Daten:
-{
-  typ: 'edit',  
-  task: STRING
-  comment: STRING
-  option: STRING
-  date: DATE
-  prio: INTEGER[1,5]
-}
-
-5.) Delete
-
-REQUEST-Methode: POST
-Format Daten: JSON
-Daten:
-{
-  typ:'delete',
-  id:INTEGER
-}
-
-RESPONSE
-Format-Daten: JSON
-
-Fehler:
-{
-  fehlernummer: INTEGER,
-}
-
-
-Anhang A) Fehlernummern
-404 -> nicht gefunden
-406 -> Datenformat/inhalt nicht korrekt
-407 -> Daten nicht vollst�ndig
-500 -> allgemeiner Fehler
-501 -> Datenbank nicht vorhanden
+Response Error
+HTTPCode 500

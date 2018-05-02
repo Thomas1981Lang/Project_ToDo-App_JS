@@ -95,6 +95,9 @@ app.post( '/delete', function( request, response) {
             response.writeHead(200,{'Content-Type':'application/json'});
             response.end( JSON.stringify({result:true}));
         });
+    } else {
+        // Error
+        response.status(500).end();
     }
 });
 
@@ -120,6 +123,9 @@ app.post( '/done', function( request, response) {
             response.writeHead(200,{'Content-Type':'application/json'});
             response.end( JSON.stringify({result:true}));
         });
+    } else {
+        // Error
+        response.status(500).end();
     }
 });
 
@@ -155,6 +161,9 @@ app.post( '/edit', function( request, response) {
             response.writeHead(200,{'Content-Type':'application/json'});
             response.end( JSON.stringify({result:true}));
         });
+    } else {
+        // Error
+        response.status(500).end();
     }
 });
 
