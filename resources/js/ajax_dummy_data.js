@@ -357,7 +357,7 @@ var makeList = function () {
                                 url: 'http://localhost:5000/done',
                                 method: 'POST',
                                 data: {
-                                    id: done_id,
+                                    id: i,
                                     timestamp: tempTime
                                 }
                             });
@@ -376,6 +376,16 @@ var makeList = function () {
                             $(this).parent().parent().parent().parent().next().css({"background-color": "rgb(180, 180, 180)"});
                             console.log(doneId);
                             $(this).parent().parent().parent().parent().attr('data-done', 1);
+
+                            tempTime = timestamp()
+                            $.ajax({
+                                url: 'http://localhost:5000/done',
+                                method: 'POST',
+                                data: {
+                                    id: i,
+                                    timestamp: tempTime
+                                }
+                            });
                         });
                     /*------------------ DONE End ------------*/
 

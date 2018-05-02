@@ -92,20 +92,23 @@ app.post( '/delete', function( request, response) {
 });
 
 
-app.post( '/delete', function( request, response) {
-    var deleteid = {
+app.post( '/done', function( request, response) {
+    var doneid = {
         id: request.body.id,
         timestamp: request.body.timestamp
     }
 
-    console.log(deleteid.timestamp,'vor delete')
-    console.log(tempStamp,'vor delete')
+    console.log(doneid.timestamp,'vor done')
+    console.log(tempStamp,'vor done')
+    console.log(toDoS.todo[doneid.id],'done id')
 
-    if (deleteid.timestamp > tempStamp) {
-        tempStamp = deleteid.timestamp * 1 + 10;
-        console.log(deleteid.timestamp,'in abfrage')
+
+    if (doneid.timestamp > tempStamp) {
+        tempStamp = doneid.timestamp * 1 + 10;
+        console.log(doneid.timestamp,'in abfrage')
         // Daten speichern
-        toDoS.todo.splice( deleteid.id, 1 );
+        toDoS.todo[doneid.id].done = 1;
+        console.log(toDoS.todo[doneid.id]);
         fs.writeFile( 'todo.json', JSON.stringify(toDoS), function(){
             response.writeHead(200,{'Content-Type':'application/json'});
             response.end( JSON.stringify({result:true}));

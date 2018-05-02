@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d72ab791-768f-45a6-8045-7359230bc879" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/ajax_dummy_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/ajax_dummy_data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server_todo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo.json" afterDir="false" />
@@ -30,14 +28,14 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42028344">
+    <splitter split-orientation="horizontal" split-proportion="0.5690877">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="ajax_dummy_data.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/js/ajax_dummy_data.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="375">
-                  <caret line="354" column="50" selection-start-line="354" selection-start-column="50" selection-end-line="354" selection-end-column="50" />
+                  <caret line="372" column="37" lean-forward="true" selection-start-line="372" selection-start-column="33" selection-end-line="372" selection-end-column="37" />
                 </state>
               </provider>
             </entry>
@@ -64,20 +62,20 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="todo.json" pinned="false" current-in-tab="false">
+          <file leaf-file-name="todo.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/todo.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state>
-                  <caret column="787" selection-start-column="787" selection-end-column="787" />
+                  <caret column="264" selection-start-column="264" selection-end-column="264" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="server_todo.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="server_todo.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server_todo.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="852">
-                  <caret line="113" column="3" selection-start-line="113" selection-start-column="3" selection-end-line="113" selection-end-column="3" />
+                <state relative-caret-position="902">
+                  <caret line="106" column="46" lean-forward="true" selection-start-line="106" selection-start-column="46" selection-end-line="106" selection-end-column="46" />
                 </state>
               </provider>
             </entry>
@@ -107,6 +105,7 @@
       <find>orte</find>
       <find>node</find>
       <find>list</find>
+      <find>done</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -122,9 +121,9 @@
         <option value="$PROJECT_DIR$/Schnittstellenbeschreibung.txt" />
         <option value="$PROJECT_DIR$/resources/css/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/server_todo.js" />
         <option value="$PROJECT_DIR$/todo.json" />
         <option value="$PROJECT_DIR$/resources/js/ajax_dummy_data.js" />
-        <option value="$PROJECT_DIR$/server_todo.js" />
       </list>
     </option>
   </component>
@@ -246,15 +245,15 @@
       <workItem from="1524501675876" duration="19019000" />
       <workItem from="1524775808854" duration="10000" />
       <workItem from="1525163693736" duration="669000" />
-      <workItem from="1525170669293" duration="28239000" />
+      <workItem from="1525170669293" duration="30807000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134938000" />
+    <option name="totallyTimeSpent" value="137506000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="4" width="2573" height="1411" extended-state="0" />
+    <frame x="-7" y="4" width="2573" height="1411" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -554,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todo.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="787" selection-start-column="787" selection-end-column="787" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/todo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1825">
@@ -568,17 +560,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/ajax_dummy_data.js">
+    <entry file="file://$PROJECT_DIR$/server_todo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="354" column="50" selection-start-line="354" selection-start-column="50" selection-end-line="354" selection-end-column="50" />
+        <state relative-caret-position="902">
+          <caret line="106" column="46" lean-forward="true" selection-start-line="106" selection-start-column="46" selection-end-line="106" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server_todo.js">
+    <entry file="file://$PROJECT_DIR$/todo.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="852">
-          <caret line="113" column="3" selection-start-line="113" selection-start-column="3" selection-end-line="113" selection-end-column="3" />
+        <state>
+          <caret column="264" selection-start-column="264" selection-end-column="264" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/ajax_dummy_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="372" column="37" lean-forward="true" selection-start-line="372" selection-start-column="33" selection-end-line="372" selection-end-column="37" />
         </state>
       </provider>
     </entry>
