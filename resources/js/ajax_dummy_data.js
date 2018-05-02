@@ -1,6 +1,8 @@
 var del_id;
 var receive_todo;
 var tempTime;
+var order;
+
 
 /*---------------------------------
 ---------- Zeitstempel ----------
@@ -16,17 +18,23 @@ var timestamp = function () {
 /*---------------------------------
 ---------- Sortiere ToDO ----------
 ---------------------------------*/
+order = $('#sortieren').val();
+console.log(order, 'order')
+
 
 $('.selection_form').on('change', function () {
+    order = $('#sortieren').val();
+    var sortTabelle = $('#sortieren').val();
+    $.ajax({
+        url: 'http://localhost:5000/zeigetodo',
+        method: 'POST',
+        data: {
+            order: order
+        },
+        success: makeList()
+    })
 
-    var sortTabelle = {
-        typ: 'sortieren',
-        sort: $('#sortieren').val()
-    }
-    console.log(sortTabelle);
-})
-
-
+});
 
 
 /*---------------------------------
@@ -38,6 +46,9 @@ var makeList = function () {
     $.ajax({
         url: 'http://localhost:5000/zeigetodo',
         method: 'POST',
+        data: {
+            order: $('#sortieren').val()
+        },
         success: function (receive_todo) {
 
             for (var i = 0; i <= receive_todo.todo.length; i++) {
@@ -317,12 +328,21 @@ var makeList = function () {
                                     .css({'border': '', 'padding': '', 'background-color': ''});
 
 
-                                // $(this)
-                                //     .find('.make_time')
-                                //     .attr('contenteditable', 'true')
-                                //     .css({'padding': '15px', 'background-color': 'white'});
+                                tempTime = timestamp()
+                                $.ajax({
+                                    url: 'http://localhost:5000/edit',
+                                    method: 'POST',
+                                    data: {
+                                        id: i,
+                                        task: modTask,
+                                        comment:modCom,
+                                        option:modKat,
+                                        date:modTime,
+                                        prio:modPrio,
+                                        timestamp: tempTime
+                                    }
+                                });
 
-                                console.log(modCom);
 
                                 $(this)
                                     .find('.done')

@@ -2,6 +2,7 @@
 var express = require( 'express' );
 var fs = require( 'fs' );
 var bp = require( 'body-parser' );
+var sortBy = require('sort-array');
 
 
 var app = express();
@@ -64,6 +65,12 @@ app.post( '/todo', function( request, response) {
 
 app.post( '/zeigetodo', function(request,response) {
   response.writeHead(200,{'Content-Type':'application/json'});
+    var sort = {
+        order: request.body.order
+    }
+
+    console.log(sort);
+  sortBy(toDoS.todo, [sort.order, 'timecreate']);
   response.end( JSON.stringify(toDoS));
 });
 
@@ -116,6 +123,40 @@ app.post( '/done', function( request, response) {
     }
 });
 
+
+app.post( '/edit', function( request, response) {
+    var edit = {
+        id: request.body.id,
+        task: request.body.task,
+        comment:request.body.comment,
+        option:request.body.option,
+        date:request.body.date,
+        prio:request.body.prio,
+        timestamp: request.body.timestamp
+    }
+
+    //console.log(doneid.timestamp,'vor done')
+    //console.log(tempStamp,'vor done')
+    //console.log(toDoS.todo[doneid.id],'done id')
+
+
+    if (edit.timestamp > tempStamp) {
+        tempStamp = edit.timestamp * 1 + 10;
+        console.log(edit.timestamp,'in abfrage')
+        // Daten speichern
+        toDoS.todo[edit.id].task = edit.task;
+        toDoS.todo[edit.id].comment = edit.comment;
+        toDoS.todo[edit.id].option = edit.option;
+        toDoS.todo[edit.id].date = edit.date;
+        toDoS.todo[edit.id].prio = edit.prio;
+        console.log(edit);
+        console.log(toDoS.todo[edit.id].task);
+        fs.writeFile( 'todo.json', JSON.stringify(toDoS), function(){
+            response.writeHead(200,{'Content-Type':'application/json'});
+            response.end( JSON.stringify({result:true}));
+        });
+    }
+});
 
 
 
