@@ -31,6 +31,9 @@ fs.readFile( 'todo.json', function(err,data) {
   }
 });
 
+var tempStamp = 0;
+
+
 app.post( '/todo', function( request, response) {
   var neuerToDo = {
     task: request.body.task,
@@ -38,6 +41,9 @@ app.post( '/todo', function( request, response) {
     option: request.body.option,
     date: request.body.date,
     prio: request.body.prio * 1,
+    timecreate: request.body.timecreate,
+    timedone: request.body.timedone * 1,
+      done: request.body.done
   }
 
   if ( neuerToDo.task && neuerToDo.option && neuerToDo.date && neuerToDo.prio ) {
@@ -51,14 +57,63 @@ app.post( '/todo', function( request, response) {
     // Error
     response.status(500).end();
   }
-
 });
+
+
 
 
 app.post( '/zeigetodo', function(request,response) {
   response.writeHead(200,{'Content-Type':'application/json'});
   response.end( JSON.stringify(toDoS));
 });
+
+
+
+
+app.post( '/delete', function( request, response) {
+    var deleteid = {
+        id: request.body.id,
+        timestamp: request.body.timestamp
+    }
+
+    console.log(deleteid.timestamp,'vor delete')
+    console.log(tempStamp,'vor delete')
+
+    if (deleteid.timestamp > tempStamp) {
+     tempStamp = deleteid.timestamp * 1 + 10;
+    console.log(deleteid.timestamp,'in abfrage')
+        // Daten speichern
+        toDoS.todo.splice( deleteid.id, 1 );
+        fs.writeFile( 'todo.json', JSON.stringify(toDoS), function(){
+            response.writeHead(200,{'Content-Type':'application/json'});
+            response.end( JSON.stringify({result:true}));
+        });
+    }
+});
+
+
+app.post( '/delete', function( request, response) {
+    var deleteid = {
+        id: request.body.id,
+        timestamp: request.body.timestamp
+    }
+
+    console.log(deleteid.timestamp,'vor delete')
+    console.log(tempStamp,'vor delete')
+
+    if (deleteid.timestamp > tempStamp) {
+        tempStamp = deleteid.timestamp * 1 + 10;
+        console.log(deleteid.timestamp,'in abfrage')
+        // Daten speichern
+        toDoS.todo.splice( deleteid.id, 1 );
+        fs.writeFile( 'todo.json', JSON.stringify(toDoS), function(){
+            response.writeHead(200,{'Content-Type':'application/json'});
+            response.end( JSON.stringify({result:true}));
+        });
+    }
+});
+
+
 
 
 app.get( '/', function(request,response){
